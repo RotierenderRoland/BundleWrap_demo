@@ -31,6 +31,7 @@ files = {
         "encoding": "utf-8",
         "source": "template.html.j2",
         "needs": ["item:apache2"],
+        "triggers": ["svc_systemd:apache2.service"]
     },
 }
 # Restarts the apache2.service
