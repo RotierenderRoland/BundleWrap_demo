@@ -21,3 +21,24 @@ items = {
         },
     },
 }
+#Uses files/template.html.j2 as the Apache2 index.html
+files = {
+    "/var/www/html/index.html": {
+        "mode": "0644",
+        "owner": "www-data",
+        "group": "www-data",
+        "content_type": "jinja2",
+        "encoding": "utf-8",
+        "source": "template.html.j2",
+        "needs": ["item:apache2"],
+    },
+}
+# Restarts the apache2.service
+svc_systemd = {
+    "apache2.service": {
+        "enabled": True,  # default
+        "running": True,  # default
+        "restart": True,
+    },
+
+}
