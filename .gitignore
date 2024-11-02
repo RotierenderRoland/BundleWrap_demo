@@ -164,6 +164,5 @@ cython_debug/
 # Secrets 
 bundlewrap_repo/.secrets.cfg
 
-#BundleWrap groups and hosts
-bundlewrap_repo/groups.py
+#BundleWrap hosts
 bundlewrap_repo/nodes.py

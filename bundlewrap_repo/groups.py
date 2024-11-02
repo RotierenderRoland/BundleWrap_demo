@@ -1,18 +1,12 @@
 groups = {
-    #'group-1': {
-    #    'bundles': (
-    #        'bundle-1',
-    #    ),
-    #    'members': (
-    #        'node-1',
-    #    ),
-    #    'subgroups': (
-    #        'group-2',
-    #    ),
-    #},
-    'all': {
-        'member_patterns': (
-            r".*",
-        ),
+    'apache-webserver': {
+        'bundles': ["bundle1", "bundle2"],
+        'member_patterns': [r"webserver-\d+"],
+        'os': 'linux',
+    },
+    'loadbalancer': {
+        'bundles': ["bundle1", "bundle2"],
+        'member_patterns': [r"loadbalancer-\d+"],
+        'os': 'linux',
     },
 }
