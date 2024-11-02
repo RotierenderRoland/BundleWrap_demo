@@ -40,6 +40,5 @@ svc_systemd = {
     "haproxy.service": {
         "enabled": True,  # default
         "running": True,  # default
-        "restart": True,
     },
 }

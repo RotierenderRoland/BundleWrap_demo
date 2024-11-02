@@ -39,7 +39,6 @@ svc_systemd = {
     "apache2.service": {
         "enabled": True,  # default
         "running": True,  # default
-        "restart": True,
     },
 
 }
