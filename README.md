@@ -10,11 +10,11 @@ The purpose is to showcase best practices in automated configuration management 
 ## Goal of the project:
 Automate the deployment of Apache web servers and an HAProxy load balancer on Ubuntu.
 Use BundleWrap to ensure configurations are consistently applied across all nodes.
-Implement dynamic templating in order to guarantee loadbalncing for an backend consisting of multiple Apache web servers.
+Implement dynamic templating in order to guarantee load balancing for an backend consisting of multiple Apache web servers.
 
 ## Bundle structure:
 The projects consist of an HAProxy and an Apache Bundle
-### HAProxy Bundle: Configures an HAProxy loadbalancer to distribute traffic to multiple Apache web servers in the backend via roundrobin loadbalancing.
+### HAProxy Bundle: Configures an HAProxy loadbalancer to distribute traffic to multiple Apache web servers in the backend via roundrobin load balancing.
 
 #### HAProxy Config:
 	global:
@@ -30,16 +30,16 @@ The projects consist of an HAProxy and an Apache Bundle
 	Sets connection retries to 3
 	Redispatches connection if a server in the backend gets unhealthy
 	Sets max. connections to 2000 in order to reduce stress on the loadbalancer
-	Sets timelimit for connection time out to 5000ms
-	Sets timelimit of client for connection time out to 5000ms
-	Sets timelimit of server backend for connection time out to 5000ms
+	Sets time limit for connection time out to 5000ms
+	Sets time limit of client for connection time out to 5000ms
+	Sets time limit of server backend for connection time out to 5000ms
 	
 	frontend:
 	Allows any incomming http connections on port 80
 	Uses http_backend as backend
 	
 	backend:
-	Uses roundrobin for loadbalancing
+	Uses roundrobin for load balancing
 	Uses every web server of the apache-webserver group as backend
 
 ### Apache Bundle: Returns its own Hostname/IP as index.html.
@@ -66,5 +66,5 @@ Tested on Ubuntu 24.04 with 1 loadbalancer and 2 webservers
 1. Templating for HAProxy Conf:
 Currenty the templating for the HAProxy configuration is not working due to issues with using the "apache-webserver" in the template.
 I will fix the error when I have the time for it. (see comment in bundles/ha_proxy/items.py)
-2. Adding an action in the Apache and the HAProxy bundle which will check the configuriation of the servers(apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
+2. Adding an action in the Apache and the HAProxy bundle which will check the configuration of the servers(apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
 
