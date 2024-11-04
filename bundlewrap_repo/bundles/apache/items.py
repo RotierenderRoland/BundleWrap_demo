@@ -11,14 +11,10 @@ actions = {
     }
 }
 
-items = {
-    # Installation of Apache2 Webserver
+pkg_apt = {
     "apache2": {
-        "pkg_apt": {
-            "name": "apache2",
-            "state": "present",
-            "needs": ["action:upgrade packages"],
-        },
+        "installed": True,  # default
+        "needs": ["action:upgrade packages"],
     },
 }
 #Uses files/template.html.j2 as the Apache2 index.html
@@ -30,7 +26,7 @@ files = {
         "content_type": "jinja2",
         "encoding": "utf-8",
         "source": "template.html.j2",
-        "needs": ["item:apache2"],
+        "needs": ["pkg_apt:apache2"],
         "triggers": ["svc_systemd:apache2.service"]
     },
 }
@@ -39,6 +35,7 @@ svc_systemd = {
     "apache2.service": {
         "enabled": True,  # default
         "running": True,  # default
+        "triggered": True
     },
 
 }

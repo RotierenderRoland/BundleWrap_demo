@@ -11,14 +11,10 @@ actions = {
     }
 }
 
-items = {
-    # Installation of HAProxy Loadbalancer
+pkg_apt = {
     "haproxy": {
-        "pkg_apt": {
-            "name": "haproxy",
-            "state": "present",
-            "needs": ["action:upgrade packages"],
-        },
+        "installed": True,  # default
+        "needs": ["action:upgrade packages"],
     },
 }
 
@@ -30,15 +26,17 @@ files = {
         "content_type": "jinja2",
         "encoding": "utf-8",
         "source": "proxy.conf.j2",
-        "needs": ["item:haproxy"],
-        "triggers": ["svc_systemd:haproxy.service"]
+        "needs": ["pkg_apt:haproxy"],
+        "triggers": ["svc_systemd:haproxy.service"],
     },
 }
+
 
 # Restarts the haproxy.service
 svc_systemd = {
     "haproxy.service": {
         "enabled": True,  # default
         "running": True,  # default
+        "triggered": True
     },
 }
