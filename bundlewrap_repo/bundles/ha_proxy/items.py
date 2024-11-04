@@ -17,7 +17,7 @@ pkg_apt = {
         "needs": ["action:upgrade packages"],
     },
 }
-
+# Jinja2 cant find the groups key, have to investigate this issue 
 files = {
     "/etc/haproxy/haproxy.cfg": {
         "mode": "0644",
