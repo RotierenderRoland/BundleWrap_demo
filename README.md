@@ -14,7 +14,8 @@ Implement dynamic templating in order to guarantee load balancing for a backend 
 
 ## Bundle structure:
 The projects consists of an HAProxy and an Apache Bundle
-### HAProxy Bundle: Configures an HAProxy load balancer to distribute traffic to multiple Apache web servers in the backend via round-robin load balancing.
+### HAProxy Bundle: 
+Configures an HAProxy load balancer to distribute traffic to multiple Apache web servers in the backend via round-robin load balancing.
 
 #### HAProxy Config:
 	global:
@@ -42,7 +43,8 @@ The projects consists of an HAProxy and an Apache Bundle
 	Uses round.robin for load balancing
 	Uses every web server of the apache-webserver group as backend
 
-### Apache Bundle: Returns its own Hostname/IP as index.html.
+### Apache Bundle: 
+Returns its own Hostname/IP as index.html.
 
 	 
 ## Requirements:
