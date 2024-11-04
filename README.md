@@ -46,10 +46,10 @@ The projects consist of an HAProxy and an Apache Bundle
 
 	 
 ## Requirements:
-BundleWrap installed and configured on the control machine.
-Ubuntu installed on all nodes (web servers and load balancer).
-SSH access to all nodes with appropriate permissions.
-Your user or group has ALL=(ALL) NOPASSWD: ALL set in the /etc/sudoers file
+- BundleWrap installed and configured on the control machine.
+- Ubuntu installed on all nodes (web servers and load balancer).
+- SSH access to all nodes with appropriate permissions.
+- Your user or group has ALL=(ALL) NOPASSWD: ALL set in the /etc/sudoers file
 
 ## How to use:
 1. Install bundlewrap
