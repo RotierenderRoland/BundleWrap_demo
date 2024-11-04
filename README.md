@@ -57,7 +57,7 @@ The projects consist of an HAProxy and an Apache Bundle
 3. Add your hosts to the nodes.py
 	- Webserver use the following naming pattern: webserver-number (eg. webserver-1)
 	- load balancer use the following naming pattern: load balancer-number (eg. load balancer-1)
-4. Run bw apply apache and bw apply ha_proxy in order to apply the bundles
+4. Run bw apply apache-webserver and bw apply loadbalancer in order to apply the bundles
 5. Confirm if the infrastructure got configured correctly
 
 Tested on Ubuntu 24.04 with 1 load balancer and 2 webservers
