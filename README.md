@@ -55,8 +55,8 @@ The projects consist of an HAProxy and an Apache Bundle
 1. Install bundlewrap
 2. Clone the repository with git clone
 3. Add your hosts to the nodes.py
-	Webserver use the following naming pattern: webserver-number (eg. webserver-1)
-	Loadbalancer use the following naming pattern: loadbalancer-number (eg. loadbalancer-1)
+	- Webserver use the following naming pattern: webserver-number (eg. webserver-1)
+	- Loadbalancer use the following naming pattern: loadbalancer-number (eg. loadbalancer-1)
 4. Run bw apply apache and bw apply ha_proxy in order to apply the bundles
 5. Confirm if the infrastructure got configured correctly
 
