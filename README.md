@@ -14,13 +14,13 @@ Implement dynamic templating in order to guarantee load balancing for an backend
 
 ## Bundle structure:
 The projects consist of an HAProxy and an Apache Bundle
-### HAProxy Bundle: Configures an HAProxy loadbalancer to distribute traffic to multiple Apache web servers in the backend via roundrobin load balancing.
+### HAProxy Bundle: Configures an HAProxy load balancer to distribute traffic to multiple Apache web servers in the backend via roundrobin load balancing.
 
 #### HAProxy Config:
 	global:
 	Configures Logging
 	Starts HAProxy as a daemon
-	Sets max. connections to 2000 in order to reduce stress on the loadbalancer
+	Sets max. connections to 2000 in order to reduce stress on the load balancer
 	
 	defaults:
 	Sets log to the in global defined rules
@@ -29,7 +29,7 @@ The projects consist of an HAProxy and an Apache Bundle
 	Prevents logging of empty requests
 	Sets connection retries to 3
 	Redispatches connection if a server in the backend gets unhealthy
-	Sets max. connections to 2000 in order to reduce stress on the loadbalancer
+	Sets max. connections to 2000 in order to reduce stress on the load balancer
 	Sets time limit for connection time out to 5000ms
 	Sets time limit of client for connection time out to 5000ms
 	Sets time limit of server backend for connection time out to 5000ms
@@ -56,11 +56,11 @@ The projects consist of an HAProxy and an Apache Bundle
 2. Clone the repository with git clone
 3. Add your hosts to the nodes.py
 	- Webserver use the following naming pattern: webserver-number (eg. webserver-1)
-	- Loadbalancer use the following naming pattern: loadbalancer-number (eg. loadbalancer-1)
+	- load balancer use the following naming pattern: load balancer-number (eg. load balancer-1)
 4. Run bw apply apache and bw apply ha_proxy in order to apply the bundles
 5. Confirm if the infrastructure got configured correctly
 
-Tested on Ubuntu 24.04 with 1 loadbalancer and 2 webservers
+Tested on Ubuntu 24.04 with 1 load balancer and 2 webservers
 
 ## Open issues:
 1. Templating for HAProxy Conf:
