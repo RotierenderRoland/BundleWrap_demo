@@ -13,7 +13,7 @@ Use BundleWrap to ensure configurations are consistently applied across all node
 Implement dynamic templating in order to guarantee load balancing for a backend consisting of multiple Apache web servers.
 
 ## Bundle structure:
-The projects consists of an HAProxy and an Apache Bundle
+The project consists of an HAProxy and an Apache Bundle
 ### HAProxy Bundle: 
 Configures an HAProxy load balancer to distribute traffic to multiple Apache web servers in the backend via round-robin load balancing.
 
@@ -25,8 +25,8 @@ Configures an HAProxy load balancer to distribute traffic to multiple Apache web
 	
 	defaults:
 	Sets logging to the globally defined rules
-	Uses http traffic
-	Logs http requests
+	Uses HTTP traffic
+	Logs HTTP requests
 	Prevents logging of empty requests
 	Sets connection retries to 3
 	Redispatches connection if a server in the backend gets unhealthy
@@ -36,11 +36,11 @@ Configures an HAProxy load balancer to distribute traffic to multiple Apache web
 	Sets backend server connection timeout to 5000ms
 	
 	frontend:
-	Allows any incomming HTTP connections on port 80
+	Allows any incoming HTTP connections on port 80
 	Uses http_backend as the backend
 	
 	backend:
-	Uses round.robin for load balancing
+	Uses round-robin for load balancing
 	Uses every web server of the apache-webserver group as backend
 
 ### Apache Bundle: 
@@ -68,5 +68,5 @@ Tested on Ubuntu 24.04 with 1 load balancer and 2 webservers
 1. Templating for HAProxy Configuration:
 Currently the templating for the HAProxy configuration is not working due to issues with using the "apache-webserver" in the template.
 I will address this error as time allows. (see comment in bundles/ha_proxy/items.py)
-2. Adding an action in the Apache and the HAProxy bundle which will check the configuration of the servers(apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
+2. Adding an action in the Apache and the HAProxy bundle which will check the configuration of the servers (apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
 
