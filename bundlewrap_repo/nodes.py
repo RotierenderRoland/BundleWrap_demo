@@ -1,14 +1,15 @@
+#Example nodes.py
 nodes = {
     'webserver-1': {
-        'hostname': "192.168.178.77",
-        'username': "bundlewrap",
+        'hostname': "192.168.xxx.xxx",
+
     },
         'webserver-2': {
-        'hostname': "192.168.178.79",
-        'username': "bundlewrap",
+        'hostname': "192.168.xxx.xxx",
+
     },
         'loadbalancer-1': {
-        'hostname': "192.168.178.80",
-        'username': "bundlewrap",
+        'hostname': "192.168.xxx.xxx",
+
     },
 }
