@@ -57,14 +57,14 @@ How to use:
 3. Add your hosts to the nodes.py
 	Webserver use the following naming pattern: webserver-<number> (eg. webserver-1)
 	Loadbalancer use the following naming pattern: loadbalancer-<number> (eg. loadbalancer-1)
-4.) Run bw apply apache and bw apply ha_proxy in order to apply the bundles
-5.) Confirm if the infrastructure got configured correctly
+4. Run bw apply apache and bw apply ha_proxy in order to apply the bundles
+5. Confirm if the infrastructure got configured correctly
 
 Tested on Ubuntu 24.04 with 1 loadbalancer and 2 webservers
 
 Open issues:
-1.) Templating for HAProxy Conf:
+1. Templating for HAProxy Conf:
 Currenty the templating for the HAProxy configuration is not working due to issues with using the "apache-webserver" in the template.
 I will fix the error when I have the time for it.
-2.) Adding an action in the Apache and the HAProxy bundle which will check the configuriation of the servers(apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
+2. Adding an action in the Apache and the HAProxy bundle which will check the configuriation of the servers(apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
 
