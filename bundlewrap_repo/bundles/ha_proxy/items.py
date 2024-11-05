@@ -1,3 +1,5 @@
+from bundlewrap.repo import Repository
+repo = Repository("bundlewrap_repo")
 #Update the System 
 actions = {
     'update repositories': {
@@ -17,7 +19,8 @@ pkg_apt = {
         "needs": ["action:upgrade packages"],
     },
 }
-# Jinja2 cant find the groups key, have to investigate this issue 
+
+apache_servers = repo.nodes_in_group("apache-webserver") #needed as context for templating the dynamic backend
 files = {
     "/etc/haproxy/haproxy.cfg": {
         "mode": "0644",
@@ -25,6 +28,7 @@ files = {
         "group": "root",
         "content_type": "jinja2",
         "encoding": "utf-8",
+        "context": {"apache_servers": apache_servers},
         "source": "proxy.conf.j2",
         "needs": ["pkg_apt:haproxy"],
         "triggers": ["svc_systemd:haproxy.service"],
