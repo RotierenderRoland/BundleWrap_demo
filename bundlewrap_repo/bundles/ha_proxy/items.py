@@ -31,7 +31,9 @@ files = {
         "context": {"apache_servers": apache_servers},
         "source": "proxy.conf.j2",
         "needs": ["pkg_apt:haproxy"],
-        "triggers": ["svc_systemd:haproxy.service"],
+        "triggers": {
+            "svc_systemd:haproxy.service:restart",
+        },
     },
 }
 
@@ -39,8 +41,6 @@ files = {
 # Restarts the haproxy.service
 svc_systemd = {
     "haproxy.service": {
-        "enabled": True,  # default
-        "running": True,  # default
         "triggered": True
     },
 }

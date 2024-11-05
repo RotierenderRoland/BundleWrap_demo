@@ -30,7 +30,7 @@ files = {
         "triggers": ["svc_systemd:apache2.service"]
     },
 }
-# Restarts the apache2.service
+# Starts
 svc_systemd = {
     "apache2.service": {
         "enabled": True,  # default
