@@ -65,8 +65,5 @@ Returns its own Hostname/IP as index.html.
 Tested on Ubuntu 24.04 with 1 load balancer and 2 webservers
 
 ## Open issues:
-1. Templating for HAProxy Configuration:
-Currently the templating for the HAProxy configuration is not working due to issues with using the "apache-webserver" in the template.
-I will address this error as time allows. (see comment in bundles/ha_proxy/items.py)
-2. Adding an action in the Apache and the HAProxy bundle which will check the configuration of the servers (apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
+1. Adding an action in the Apache and the HAProxy bundle which will check the configuration of the servers (apache2ctl configtest and haproxy -c -f /etc/haproxy/haproxy.cfg)
 
